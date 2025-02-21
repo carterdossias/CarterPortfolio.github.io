@@ -1,37 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Carter Dossias | Portfolio</title>
+  
+  <!-- SEO & Accessibility -->
+  <meta name="description" content="Official portfolio of Carter Dossias, a Network Operations Specialist and Tech Support Lead with a passion for scalable networking solutions. Explore projects, experience, and contact information here.">
+  <meta name="robots" content="index, follow">
   
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   
   <!-- AOS Library CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" />
+  <link 
+    rel="stylesheet" 
+    href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css"/>
   
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="styles.css" />
-  
+  <link rel="stylesheet" href="styles.css"/>
+
   <!-- Manifest for PWA -->
   <link rel="manifest" href="manifest.json">
-  
+
+  <!-- We defer scripts for performance -->
   <!-- Three.js (for dynamic hero background and network map) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  
+  <script 
+    src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"
+    defer>
+  </script>
+
   <!-- Particles.js for other sections -->
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script 
+    src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"
+    defer>
+  </script>
   
   <!-- Vivus for SVG animations (hero network) -->
-  <script src="https://cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js"></script>
+  <script 
+    src="https://cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js"
+    defer>
+  </script>
   
   <!-- CountUp.js for animating numbers in Stats -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.0.7/countUp.min.js"></script>
+  <script 
+    src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.0.7/countUp.min.js"
+    defer>
+  </script>
   
   <!-- GSAP and ScrollTrigger for parallax effects -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+  <script 
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"
+    defer>
+  </script>
+  <script 
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"
+    defer>
+  </script>
 </head>
 <body>
   <!-- NAVIGATION -->
@@ -39,7 +64,7 @@
     <div class="container nav-container">
       <div class="logo">CD</div>
       <!-- Hamburger Icon for Mobile -->
-      <div class="hamburger" id="hamburger">
+      <div class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
@@ -57,8 +82,16 @@
         <li><a href="#testimonials">Testimonials</a></li>
         <li><a href="#certifications">Certifications</a></li>
         <li><a href="#interests">Interests</a></li>
+        <li><a href="#knowledge-hub">Knowledge Hub</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a href="https://www.linkedin.com/in/carter-dossias850" target="_blank">LinkedIn</a></li>
+        <li>
+          <a 
+            href="https://www.linkedin.com/in/carter-dossias850" 
+            target="_blank" 
+            class="btn cta-btn">
+            Connect on LinkedIn
+          </a>
+        </li>
         <li><button id="theme-toggle" class="theme-toggle">Toggle Theme</button></li>
       </ul>
     </div>
@@ -66,10 +99,12 @@
 
   <!-- Mobile Menu Toggle Script -->
   <script>
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    hamburger.addEventListener('click', function(){
-      navLinks.classList.toggle('active');
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.getElementById('hamburger');
+      const navLinks = document.querySelector('.nav-links');
+      hamburger.addEventListener('click', function(){
+        navLinks.classList.toggle('active');
+      });
     });
   </script>
 
@@ -117,7 +152,11 @@
         </svg>
       </div>
       <div class="about-image">
-        <img src="https://media.licdn.com/dms/image/v2/D4D35AQEF9WaK0ajYqw/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1696876258287?e=1740668400&v=beta&t=h5mGrzKaAKn3W0uu6yTQ9bj4rwYFLt6tYtIHuvcDICw" alt="Carter Dossias">
+        <!-- Lazy load the portrait -->
+        <img 
+          src="https://media.licdn.com/dms/image/v2/D4D35AQEF9WaK0ajYqw/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1696876258287?e=1740668400&v=beta&t=h5mGrzKaAKn3W0uu6yTQ9bj4rwYFLt6tYtIHuvcDICw" 
+          alt="Headshot of Carter Dossias"
+          loading="lazy">
       </div>
       <div class="about-text">
         <h2>About Me</h2>
@@ -126,8 +165,19 @@
           With extensive experience in network engineering, systems administration, and technical support, I lead
           operations and explore innovative IT solutions.
         </p>
+        <!-- Inline PDF preview (adjust path if needed) -->
+        <div class="resume-container">
+          <!-- Make sure DossiasCarterResume2025.pdf is in the same folder as index.html -->
+          <iframe 
+            src="./DossiasCarterResume2025.pdf" 
+            style="width:100%; height:350px;" 
+            title="Resume Preview"
+            aria-label="PDF Resume Preview">
+          </iframe>
+        </div>
+        <!-- Fallback: .docx download -->
         <a href="DossiasCarterResume2025.docx" class="btn resume-btn" download>
-          Download My Resume
+          Download My Resume (.docx)
         </a>
       </div>
     </div>
@@ -270,7 +320,10 @@
       </div>
       <h2>Projects</h2>
       <div class="project-card" data-aos="zoom-in">
-        <img src="https://media.licdn.com/dms/image/v2/D4E22AQEYB2M6T_MZ4g/feedshare-shrink_800/B4EZPVQQQXHkAg-/0/1734449628492?e=1743033600&v=beta&t=q01LJ_Av8L68RTP0OC5jOCseRuFzFincsTplKOfVUQk" alt="Network Topology Design">
+        <img 
+          src="https://media.licdn.com/dms/image/v2/D4E22AQEYB2M6T_MZ4g/feedshare-shrink_800/B4EZPVQQQXHkAg-/0/1734449628492?e=1743033600&v=beta&t=q01LJ_Av8L68RTP0OC5jOCseRuFzFincsTplKOfVUQk" 
+          alt="Screenshot of Network Topology Design"
+          loading="lazy">
         <div class="project-info">
           <h3>Network Topology Design</h3>
           <p>A comprehensive design showcasing a modern, scalable network infrastructure.</p>
@@ -278,7 +331,10 @@
         </div>
       </div>
       <div class="project-card" data-aos="zoom-in">
-        <img src="https://ugc.production.linktr.ee/44832b36-6049-4e34-8044-39a8d099d313_TradersEdge-Logo--1-.png?io=true&size=avatar-v3_0" alt="Traders Edge Platform">
+        <img 
+          src="https://ugc.production.linktr.ee/44832b36-6049-4e34-8044-39a8d099d313_TradersEdge-Logo--1-.png?io=true&size=avatar-v3_0" 
+          alt="Logo for Traders Edge Platform"
+          loading="lazy">
         <div class="project-info">
           <h3>Traders Edge Platform</h3>
           <p>Co-founded a student platform for collaborative stock market analysis and strategy presentations.</p>
@@ -292,14 +348,14 @@
     </div>
   </section>
 
-<!-- NETWORK MAP SECTION -->
-<section id="network-map">
-  <div class="network-map-container"></div>
-  <div class="container network-map-content" data-aos="fade-up">
-    <h2>Cosmic Network Map</h2>
-    <p>Explore a 3D network representing different facets of my portfolio. Hover over nodes for details and drag them to interact!</p>
-  </div>
-</section>
+  <!-- NETWORK MAP SECTION -->
+  <section id="network-map">
+    <div class="network-map-container"></div>
+    <div class="container network-map-content" data-aos="fade-up">
+      <h2>Cosmic Network Map</h2>
+      <p>Explore a 3D network representing different facets of my portfolio. Hover over nodes for details and drag them to interact!</p>
+    </div>
+  </section>
 
   <!-- TESTIMONIALS SECTION -->
   <section id="testimonials">
@@ -371,6 +427,26 @@
     </div>
   </section>
 
+  <!-- KNOWLEDGE HUB / BLOG SECTION -->
+  <section id="knowledge-hub">
+    <div class="container knowledge-hub-container" data-aos="fade-up">
+      <h2>Knowledge Hub</h2>
+      <p>Short articles and case studies on networking, AI, and modern IT solutions.</p>
+      <div class="knowledge-hub-posts">
+        <article class="kh-post" data-aos="zoom-in">
+          <h3>Best Practices in VLAN Configuration</h3>
+          <p>Explore how VLAN segmentation boosts security and network performance, with real-world examples from campus-wide deployments.</p>
+          <a href="#" class="btn">Read More</a>
+        </article>
+        <article class="kh-post" data-aos="zoom-in">
+          <h3>AI Ops in Modern Networks</h3>
+          <p>Learn about GPU-accelerated AI and how it helps automate large-scale monitoring, fault isolation, and capacity planning.</p>
+          <a href="#" class="btn">Read More</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT SECTION -->
   <section id="contact">
     <div id="particles-contact"></div>
@@ -391,7 +467,7 @@
   </section>
 
   <!-- BACK TO TOP BUTTON -->
-  <a href="#hero" class="back-to-top" data-aos="fade-in" data-aos-delay="300">↑</a>
+  <a href="#hero" class="back-to-top" data-aos="fade-in" data-aos-delay="300" aria-label="Back to top">↑</a>
 
   <!-- FOOTER -->
   <footer>
@@ -400,7 +476,7 @@
       <ul class="footer-socials">
         <li><a href="https://github.com/carterdossias" target="_blank">GitHub</a></li>
         <li><a href="https://www.instagram.com/carterd12/" target="_blank">Instagram</a></li>
-        <li><a href="www.linkedin.com/in/carter-dossias850" target="_blank">LinkedIn</a></li>
+        <li><a href="https://www.linkedin.com/in/carter-dossias850" target="_blank">LinkedIn</a></li>
       </ul>
     </div>
   </footer>
@@ -415,385 +491,432 @@
   </div>
 
   <!-- AOS Library JS -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({ once: false, mirror: true });
+  <script 
+    src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"
+    defer>
+  </script>
+  <script defer>
+    document.addEventListener('DOMContentLoaded', () => {
+      AOS.init({ once: false, mirror: true });
+    });
   </script>
   
   <!-- Vivus Animated SVG for the Hero Network -->
-  <script>
-    new Vivus('network-svg', { duration: 200, type: 'oneByOne' });
+  <script defer>
+    document.addEventListener('DOMContentLoaded', () => {
+      new Vivus('network-svg', { duration: 200, type: 'oneByOne' });
+    });
   </script>
   
   <!-- CountUp Animation for Stats -->
-  <script>
+  <script defer>
     document.addEventListener('DOMContentLoaded', function(){
       document.querySelectorAll('.stat-card h3.count').forEach(el => {
-        const target = parseInt(el.innerText, 10);
-        const countUp = new CountUp(el, target, { suffix: '+' });
+        const target = parseFloat(el.innerText);
+        const countUp = new CountUp(el, target, { suffix: (target === 3.5 ? '' : '+') });
         if (!countUp.error) { countUp.start(); }
       });
     });
   </script>
   
   <!-- Theme Toggle Script -->
-  <script>
-    document.getElementById('theme-toggle').addEventListener('click', function(){
-      document.body.classList.toggle('light-mode');
+  <script defer>
+    document.addEventListener('DOMContentLoaded', function(){
+      document.getElementById('theme-toggle').addEventListener('click', function(){
+        document.body.classList.toggle('light-mode');
+      });
     });
   </script>
   
-  <!-- Modal Script -->
-  <script>
-    const openModalButtons = document.querySelectorAll('.open-modal');
-    const modal = document.getElementById('projectModal');
-    const closeModalButton = modal.querySelector('.close');
-    openModalButtons.forEach(button => {
-      button.addEventListener('click', function(){ modal.style.display = 'block'; });
+  <!-- Modal Script for Projects -->
+  <script defer>
+    document.addEventListener('DOMContentLoaded', () => {
+      const openModalButtons = document.querySelectorAll('.open-modal');
+      const modal = document.getElementById('projectModal');
+      const closeModalButton = modal.querySelector('.close');
+      openModalButtons.forEach(button => {
+        button.addEventListener('click', function(){ modal.style.display = 'block'; });
+      });
+      closeModalButton.addEventListener('click', function(){ modal.style.display = 'none'; });
+      window.addEventListener('click', function(event){ 
+        if (event.target == modal) { 
+          modal.style.display = 'none'; 
+        }
+      });
     });
-    closeModalButton.addEventListener('click', function(){ modal.style.display = 'none'; });
-    window.addEventListener('click', function(event){ if (event.target == modal) { modal.style.display = 'none'; } });
   </script>
   
   <!-- GSAP Parallax Effect on Section Decorators -->
-  <script>
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.to(".section-decorator", {
-      y: -20,
-      scrollTrigger: {
-        trigger: ".section-decorator",
-        start: "top center",
-        end: "bottom center",
-        scrub: true
-      }
+  <script defer>
+    document.addEventListener('DOMContentLoaded', () => {
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.to(".section-decorator", {
+        y: -20,
+        scrollTrigger: {
+          trigger: ".section-decorator",
+          start: "top center",
+          end: "bottom center",
+          scrub: true
+        }
+      });
     });
   </script>
   
   <!-- Three.js Dynamic Interactive Background for Hero -->
-  <script>
-    const canvasContainer = document.querySelector('.threejs-canvas-container');
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ alpha: true });
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    canvasContainer.appendChild(renderer.domElement);
-    
-    const geometry = new THREE.BufferGeometry();
-    const vertices = [];
-    const numParticles = 500;
-    for(let i = 0; i < numParticles; i++){
-      vertices.push((Math.random() - 0.5) * 100);
-      vertices.push((Math.random() - 0.5) * 100);
-      vertices.push((Math.random() - 0.5) * 100);
-    }
-    geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
-    
-    const material = new THREE.PointsMaterial({ color: 0xffffff, size: 0.5 });
-    const points = new THREE.Points(geometry, material);
-    scene.add(points);
-    
-    camera.position.z = 50;
-    
-    function animateThree() {
-      requestAnimationFrame(animateThree);
-      points.rotation.x += 0.0005;
-      points.rotation.y += 0.001;
-      renderer.render(scene, camera);
-    }
-    animateThree();
-    
-    window.addEventListener('resize', () => {
+  <script defer>
+    document.addEventListener('DOMContentLoaded', () => {
+      const canvasContainer = document.querySelector('.threejs-canvas-container');
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+      const renderer = new THREE.WebGLRenderer({ alpha: true });
       renderer.setSize(window.innerWidth, window.innerHeight);
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
+      canvasContainer.appendChild(renderer.domElement);
+      
+      const geometry = new THREE.BufferGeometry();
+      const vertices = [];
+      const numParticles = 500;
+      for(let i = 0; i < numParticles; i++){
+        vertices.push((Math.random() - 0.5) * 100);
+        vertices.push((Math.random() - 0.5) * 100);
+        vertices.push((Math.random() - 0.5) * 100);
+      }
+      geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+      
+      const material = new THREE.PointsMaterial({ color: 0xffffff, size: 0.5 });
+      const points = new THREE.Points(geometry, material);
+      scene.add(points);
+      
+      camera.position.z = 50;
+      
+      function animateThree() {
+        requestAnimationFrame(animateThree);
+        points.rotation.x += 0.0005;
+        points.rotation.y += 0.001;
+        renderer.render(scene, camera);
+      }
+      animateThree();
+      
+      window.addEventListener('resize', () => {
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+      });
     });
   </script>
   
-<!-- Three.js Interactive Network Map with Draggable, Pulsating Nodes and Fully Connected Links -->
-<script>
-  // Get container and set up scene, camera, and renderer for the network map
-  const netContainer = document.querySelector('.network-map-container');
-  const netScene = new THREE.Scene();
-  const netCamera = new THREE.PerspectiveCamera(
-    75,
-    netContainer.clientWidth / netContainer.clientHeight,
-    0.1,
-    1000
-  );
-  const netRenderer = new THREE.WebGLRenderer({ alpha: true });
-  netRenderer.setSize(netContainer.clientWidth, netContainer.clientHeight);
-  netContainer.appendChild(netRenderer.domElement);
-
-  // Arrays to store nodes and dynamic link objects
-  const nodesArray = [];
-  const linesArray = [];
-
-  // Create 6 nodes distributed on a sphere for a cosmic feel
-  const nodeMaterial = new THREE.MeshBasicMaterial({ color: 0xff5e13 });
-  const nodeGeometry = new THREE.SphereGeometry(1.2, 32, 32);
-  const nodeCount = 6;
-  const sphereRadius = 30;
-  for (let i = 0; i < nodeCount; i++) {
-    const theta = Math.acos(THREE.MathUtils.randFloatSpread(2));
-    const phi = THREE.MathUtils.randFloat(0, Math.PI * 2);
-    const x = sphereRadius * Math.sin(theta) * Math.cos(phi);
-    const y = sphereRadius * Math.sin(theta) * Math.sin(phi);
-    const z = sphereRadius * Math.cos(theta);
-    const node = new THREE.Mesh(nodeGeometry, nodeMaterial.clone());
-    node.position.set(x, y, z);
-    // Store original position and a random phase for pulsation
-    node.userData.originalPosition = node.position.clone();
-    node.userData.phase = Math.random() * Math.PI * 2;
-    // Store previous position for group dragging calculations
-    node.userData.prevPos = node.position.clone();
-    netScene.add(node);
-    nodesArray.push(node);
-  }
-
-  // Create connecting lines between every pair of nodes (fully connected graph)
-  for (let i = 0; i < nodeCount; i++) {
-    for (let j = i + 1; j < nodeCount; j++) {
-      const points = [nodesArray[i].position.clone(), nodesArray[j].position.clone()];
-      const lineGeometry = new THREE.BufferGeometry().setFromPoints(points);
-      const lineMaterial = new THREE.LineBasicMaterial({ color: 0xffffff, opacity: 0.3, transparent: true });
-      const line = new THREE.Line(lineGeometry, lineMaterial);
-      netScene.add(line);
-      linesArray.push({ line, node1: nodesArray[i], node2: nodesArray[j] });
-    }
-  }
-
-  netCamera.position.z = 60;
-
-  // Set up raycaster and mouse for interactivity
-  const netRaycaster = new THREE.Raycaster();
-  const netMouse = new THREE.Vector2();
-
-  // Variables for drag interactions
-  let draggingNode = null;
-  let dragPlane = new THREE.Plane();
-  let dragOffset = new THREE.Vector3();
-
-  // Create tooltip element for node hover
-  const netTooltip = document.createElement('div');
-  netTooltip.className = 'node-tooltip';
-  netTooltip.innerText = 'example';
-  netTooltip.style.display = 'none';
-  netContainer.appendChild(netTooltip);
-
-  // Mouse move event: update mouse and tooltip; if dragging, update node position via drag plane
-  netContainer.addEventListener('mousemove', (event) => {
-    const rect = netContainer.getBoundingClientRect();
-    netMouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
-    netMouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
-    netTooltip.style.left = (event.clientX - rect.left) + 'px';
-    netTooltip.style.top = (event.clientY - rect.top) + 'px';
-
-    if (draggingNode) {
-      netRaycaster.setFromCamera(netMouse, netCamera);
-      const intersection = new THREE.Vector3();
-      if (netRaycaster.ray.intersectPlane(dragPlane, intersection)) {
-        draggingNode.position.copy(intersection.sub(dragOffset));
-        // Apply a fraction of the delta to all connected nodes for group dragging
-        // (Here, we update links automatically in the animation loop.)
-      }
-    }
-  });
-
-  // Mouse down: start dragging if a node is clicked
-  netContainer.addEventListener('mousedown', (event) => {
-    netRaycaster.setFromCamera(netMouse, netCamera);
-    const intersects = netRaycaster.intersectObjects(nodesArray);
-    if (intersects.length > 0) {
-      draggingNode = intersects[0].object;
-      netTooltip.style.display = 'none';
-      dragPlane.setFromNormalAndCoplanarPoint(
-        netCamera.getWorldDirection(new THREE.Vector3()),
-        draggingNode.position
+  <!-- Three.js Interactive Network Map with Enhanced Tooltips -->
+  <script defer>
+    document.addEventListener('DOMContentLoaded', () => {
+      const netContainer = document.querySelector('.network-map-container');
+      const netScene = new THREE.Scene();
+      const netCamera = new THREE.PerspectiveCamera(
+        75,
+        netContainer.clientWidth / netContainer.clientHeight,
+        0.1,
+        1000
       );
-      netRaycaster.ray.intersectPlane(dragPlane, new THREE.Vector3());
-      // Record the previous position of the dragging node
-      draggingNode.userData.prevPos.copy(draggingNode.position);
-      // Calculate offset between mouse intersection and node position
-      const intersectPoint = new THREE.Vector3();
-      netRaycaster.ray.intersectPlane(dragPlane, intersectPoint);
-      dragOffset.copy(intersectPoint).sub(draggingNode.position);
-    }
-  });
+      const netRenderer = new THREE.WebGLRenderer({ alpha: true });
+      netRenderer.setSize(netContainer.clientWidth, netContainer.clientHeight);
+      netContainer.appendChild(netRenderer.domElement);
 
-  // Mouse up: when released, apply a slight elastic bounce (nodes keep their new positions)
-  netContainer.addEventListener('mouseup', (event) => {
-    if (draggingNode) {
-      gsap.to(draggingNode.scale, {
-        x: draggingNode.scale.x * 0.95,
-        y: draggingNode.scale.y * 0.95,
-        z: draggingNode.scale.z * 0.95,
-        duration: 0.5,
-        ease: "elastic.out(1, 0.3)"
-      });
-      // Update every node's original position to its new position
-      nodesArray.forEach(node => {
-        node.userData.originalPosition.copy(node.position);
-      });
-      draggingNode = null;
-    }
-  });
+      // Data for each node: label & details
+      const nodeData = [
+        { label: "Cisco Prime", detail: "Experience in VLAN, DHCP, wireless config" },
+        { label: "Meraki Cloud", detail: "Certified in Meraki solutions & dashboards" },
+        { label: "NVIDIA AI", detail: "GPU-accelerated computing & AI ops" },
+        { label: "Tech Support", detail: "High-volume ticket triage with Jira" },
+        { label: "Projects", detail: "Network design, automation scripts" },
+        { label: "Security Focus", detail: "MFA, zero-trust, campus transitions" }
+      ];
 
-  // Animate the network scene
-  function animateNet() {
-    requestAnimationFrame(animateNet);
-    // Slow auto-rotation
-    netScene.rotation.y += 0.0003;
+      const nodesArray = [];
+      const linesArray = [];
+      const nodeMaterial = new THREE.MeshBasicMaterial({ color: 0xff5e13 });
+      const nodeGeometry = new THREE.SphereGeometry(1.2, 32, 32);
+      const nodeCount = nodeData.length;
+      const sphereRadius = 30;
 
-    // Update dynamic links to always connect the nodes
-    linesArray.forEach(link => {
-      link.line.geometry.setFromPoints([link.node1.position, link.node2.position]);
-    });
+      // Create nodes in a sphere arrangement
+      for (let i = 0; i < nodeCount; i++) {
+        const theta = Math.acos(THREE.MathUtils.randFloatSpread(2));
+        const phi = THREE.MathUtils.randFloat(0, Math.PI * 2);
+        const x = sphereRadius * Math.sin(theta) * Math.cos(phi);
+        const y = sphereRadius * Math.sin(theta) * Math.sin(phi);
+        const z = sphereRadius * Math.cos(theta);
 
-    // Apply pulsation to nodes (if not being dragged)
-    const time = Date.now() * 0.002;
-    nodesArray.forEach(node => {
-      if (node !== draggingNode) {
-        const pulsate = 1 + 0.2 * Math.sin(time + node.userData.phase);
-        node.scale.set(pulsate, pulsate, pulsate);
+        const node = new THREE.Mesh(nodeGeometry, nodeMaterial.clone());
+        node.position.set(x, y, z);
+
+        // Attach nodeData
+        node.userData.label = nodeData[i].label;
+        node.userData.detail = nodeData[i].detail;
+        node.userData.originalPosition = node.position.clone();
+        node.userData.phase = Math.random() * Math.PI * 2;
+        node.userData.prevPos = node.position.clone();
+
+        netScene.add(node);
+        nodesArray.push(node);
       }
-    });
 
-    // Raycast for hover tooltip (only when not dragging)
-    netRaycaster.setFromCamera(netMouse, netCamera);
-    const hoverIntersects = netRaycaster.intersectObjects(nodesArray);
-    if (!draggingNode && hoverIntersects.length > 0) {
-      netTooltip.style.display = 'block';
-    } else if (!draggingNode) {
+      // Fully connect the nodes with lines
+      for (let i = 0; i < nodeCount; i++) {
+        for (let j = i + 1; j < nodeCount; j++) {
+          const points = [nodesArray[i].position.clone(), nodesArray[j].position.clone()];
+          const lineGeometry = new THREE.BufferGeometry().setFromPoints(points);
+          const lineMaterial = new THREE.LineBasicMaterial({ color: 0xffffff, opacity: 0.3, transparent: true });
+          const line = new THREE.Line(lineGeometry, lineMaterial);
+          netScene.add(line);
+          linesArray.push({ line, node1: nodesArray[i], node2: nodesArray[j] });
+        }
+      }
+
+      netCamera.position.z = 60;
+
+      // Raycaster & mouse for dragging & hover
+      const netRaycaster = new THREE.Raycaster();
+      const netMouse = new THREE.Vector2();
+      let draggingNode = null;
+      let dragPlane = new THREE.Plane();
+      let dragOffset = new THREE.Vector3();
+
+      // Tooltip element
+      const netTooltip = document.createElement('div');
+      netTooltip.className = 'node-tooltip';
       netTooltip.style.display = 'none';
-    }
-    
-    netRenderer.render(netScene, netCamera);
-  }
-  animateNet();
+      netContainer.appendChild(netTooltip);
 
-  window.addEventListener('resize', () => {
-    netRenderer.setSize(netContainer.clientWidth, netContainer.clientHeight);
-    netCamera.aspect = netContainer.clientWidth / netContainer.clientHeight;
-    netCamera.updateProjectionMatrix();
-  });
-</script>
+      // Mouse move event
+      netContainer.addEventListener('mousemove', (event) => {
+        const rect = netContainer.getBoundingClientRect();
+        netMouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+        netMouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+        netTooltip.style.left = (event.clientX - rect.left) + 'px';
+        netTooltip.style.top = (event.clientY - rect.top) + 'px';
+
+        if (draggingNode) {
+          netRaycaster.setFromCamera(netMouse, netCamera);
+          const intersection = new THREE.Vector3();
+          if (netRaycaster.ray.intersectPlane(dragPlane, intersection)) {
+            draggingNode.position.copy(intersection.sub(dragOffset));
+          }
+        }
+      });
+
+      // Mouse down: start dragging if node clicked
+      netContainer.addEventListener('mousedown', () => {
+        netRaycaster.setFromCamera(netMouse, netCamera);
+        const intersects = netRaycaster.intersectObjects(nodesArray);
+        if (intersects.length > 0) {
+          draggingNode = intersects[0].object;
+          netTooltip.style.display = 'none';
+          dragPlane.setFromNormalAndCoplanarPoint(
+            netCamera.getWorldDirection(new THREE.Vector3()),
+            draggingNode.position
+          );
+          netRaycaster.ray.intersectPlane(dragPlane, new THREE.Vector3());
+          draggingNode.userData.prevPos.copy(draggingNode.position);
+
+          const intersectPoint = new THREE.Vector3();
+          netRaycaster.ray.intersectPlane(dragPlane, intersectPoint);
+          dragOffset.copy(intersectPoint).sub(draggingNode.position);
+        }
+      });
+
+      // Mouse up
+      netContainer.addEventListener('mouseup', () => {
+        if (draggingNode) {
+          gsap.to(draggingNode.scale, {
+            x: draggingNode.scale.x * 0.95,
+            y: draggingNode.scale.y * 0.95,
+            z: draggingNode.scale.z * 0.95,
+            duration: 0.5,
+            ease: "elastic.out(1, 0.3)"
+          });
+          // Update each node's original position
+          nodesArray.forEach(node => {
+            node.userData.originalPosition.copy(node.position);
+          });
+          draggingNode = null;
+        }
+      });
+
+      // Animate the network scene
+      function animateNet() {
+        requestAnimationFrame(animateNet);
+        // Slow auto-rotation
+        netScene.rotation.y += 0.0003;
+
+        // Update link geometry
+        linesArray.forEach(link => {
+          link.line.geometry.setFromPoints([link.node1.position, link.node2.position]);
+        });
+
+        // Node pulsation (if not dragging)
+        const time = Date.now() * 0.002;
+        nodesArray.forEach(node => {
+          if (node !== draggingNode) {
+            const pulsate = 1 + 0.2 * Math.sin(time + node.userData.phase);
+            node.scale.set(pulsate, pulsate, pulsate);
+          }
+        });
+
+        // Raycast for hover tooltip
+        netRaycaster.setFromCamera(netMouse, netCamera);
+        const hoverIntersects = netRaycaster.intersectObjects(nodesArray);
+        if (!draggingNode && hoverIntersects.length > 0) {
+          const hoveredNode = hoverIntersects[0].object;
+          netTooltip.innerText = hoveredNode.userData.label + ": " + hoveredNode.userData.detail;
+          netTooltip.style.display = 'block';
+        } else if (!draggingNode) {
+          netTooltip.style.display = 'none';
+        }
+
+        netRenderer.render(netScene, netCamera);
+      }
+      animateNet();
+
+      window.addEventListener('resize', () => {
+        netRenderer.setSize(netContainer.clientWidth, netContainer.clientHeight);
+        netCamera.aspect = netContainer.clientWidth / netContainer.clientHeight;
+        netCamera.updateProjectionMatrix();
+      });
+    });
+  </script>
   
   <!-- Particles.js Config for Other Sections -->
-  <script>
-    particlesJS("particles-about", {
-      "particles": {
-        "number": { "value": 50, "density": { "enable": true, "value_area": 700 } },
-        "color": { "value": "#ff5e13" },
-        "shape": { "type": "circle" },
-        "opacity": { "value": 0.4 },
-        "size": { "value": 2 },
-        "line_linked": { "enable": true, "distance": 120, "color": "#ff5e13", "opacity": 0.3, "width": 1 },
-        "move": { "enable": true, "speed": 3 }
-      }
-    });
-    particlesJS("particles-experience", {
-      "particles": {
-        "number": { "value": 60, "density": { "enable": true, "value_area": 700 } },
-        "color": { "value": "#ffffff" },
-        "shape": { "type": "circle" },
-        "opacity": { "value": 0.3 },
-        "size": { "value": 2 },
-        "line_linked": { "enable": true, "distance": 100, "color": "#ffffff", "opacity": 0.3, "width": 1 },
-        "move": { "enable": true, "speed": 2 }
-      }
-    });
-    particlesJS("particles-education", {
-      "particles": {
-        "number": { "value": 40, "density": { "enable": true, "value_area": 600 } },
-        "color": { "value": "#ff5e13" },
-        "shape": { "type": "circle" },
-        "opacity": { "value": 0.5 },
-        "size": { "value": 3 },
-        "line_linked": { "enable": true, "distance": 130, "color": "#ff5e13", "opacity": 0.3, "width": 1 },
-        "move": { "enable": true, "speed": 2 }
-      }
-    });
-    particlesJS("particles-skills", {
-      "particles": {
-        "number": { "value": 70, "density": { "enable": true, "value_area": 800 } },
-        "color": { "value": "#ffffff" },
-        "shape": { "type": "circle" },
-        "opacity": { "value": 0.4 },
-        "size": { "value": 3 },
-        "line_linked": { "enable": true, "distance": 130, "color": "#ffffff", "opacity": 0.3, "width": 1 },
-        "move": { "enable": true, "speed": 3 }
-      }
-    });
-    particlesJS("particles-stats", {
-      "particles": {
-        "number": { "value": 60, "density": { "enable": true, "value_area": 700 } },
-        "color": { "value": "#ff5e13" },
-        "shape": { "type": "circle" },
-        "opacity": { "value": 0.4 },
-        "size": { "value": 2 },
-        "line_linked": { "enable": true, "distance": 100, "color": "#ff5e13", "opacity": 0.3, "width": 1 },
-        "move": { "enable": true, "speed": 2 }
-      }
-    });
-    particlesJS("particles-projects", {
-      "particles": {
-        "number": { "value": 45, "density": { "enable": true, "value_area": 600 } },
-        "color": { "value": "#ffffff" },
-        "shape": { "type": "circle" },
-        "opacity": { "value": 0.5 },
-        "size": { "value": 3 },
-        "line_linked": { "enable": true, "distance": 140, "color": "#ffffff", "opacity": 0.3, "width": 1 },
-        "move": { "enable": true, "speed": 2 }
-      }
-    });
-    particlesJS("particles-testimonials", {
-      "particles": {
-        "number": { "value": 40, "density": { "enable": true, "value_area": 600 } },
-        "color": { "value": "#ff5e13" },
-        "shape": { "type": "circle" },
-        "opacity": { "value": 0.4 },
-        "size": { "value": 2 },
-        "line_linked": { "enable": true, "distance": 100, "color": "#ff5e13", "opacity": 0.3, "width": 1 },
-        "move": { "enable": true, "speed": 2 }
-      }
-    });
-    particlesJS("particles-certifications", {
-      "particles": {
-        "number": { "value": 50, "density": { "enable": true, "value_area": 700 } },
-        "color": { "value": "#ffffff" },
-        "shape": { "type": "circle" },
-        "opacity": { "value": 0.3 },
-        "size": { "value": 3 },
-        "line_linked": { "enable": true, "distance": 120, "color": "#ffffff", "opacity": 0.3, "width": 1 },
-        "move": { "enable": true, "speed": 2 }
-      }
-    });
-    particlesJS("particles-interests", {
-      "particles": {
-        "number": { "value": 40, "density": { "enable": true, "value_area": 600 } },
-        "color": { "value": "#ff5e13" },
-        "shape": { "type": "circle" },
-        "opacity": { "value": 0.4 },
-        "size": { "value": 2 },
-        "line_linked": { "enable": true, "distance": 120, "color": "#ff5e13", "opacity": 0.3, "width": 1 },
-        "move": { "enable": true, "speed": 2 }
-      }
-    });
-    particlesJS("particles-contact", {
-      "particles": {
-        "number": { "value": 60, "density": { "enable": true, "value_area": 700 } },
-        "color": { "value": "#ffffff" },
-        "shape": { "type": "circle" },
-        "opacity": { "value": 0.4 },
-        "size": { "value": 3 },
-        "line_linked": { "enable": true, "distance": 120, "color": "#ffffff", "opacity": 0.3, "width": 1 },
-        "move": { "enable": true, "speed": 2 }
-      }
+  <script defer>
+    document.addEventListener('DOMContentLoaded', () => {
+      particlesJS("particles-about", {
+        "particles": {
+          "number": { "value": 50, "density": { "enable": true, "value_area": 700 } },
+          "color": { "value": "#ff5e13" },
+          "shape": { "type": "circle" },
+          "opacity": { "value": 0.4 },
+          "size": { "value": 2 },
+          "line_linked": { "enable": true, "distance": 120, "color": "#ff5e13", "opacity": 0.3, "width": 1 },
+          "move": { "enable": true, "speed": 3 }
+        }
+      });
+      particlesJS("particles-experience", {
+        "particles": {
+          "number": { "value": 60, "density": { "enable": true, "value_area": 700 } },
+          "color": { "value": "#ffffff" },
+          "shape": { "type": "circle" },
+          "opacity": { "value": 0.3 },
+          "size": { "value": 2 },
+          "line_linked": { "enable": true, "distance": 100, "color": "#ffffff", "opacity": 0.3, "width": 1 },
+          "move": { "enable": true, "speed": 2 }
+        }
+      });
+      particlesJS("particles-education", {
+        "particles": {
+          "number": { "value": 40, "density": { "enable": true, "value_area": 600 } },
+          "color": { "value": "#ff5e13" },
+          "shape": { "type": "circle" },
+          "opacity": { "value": 0.5 },
+          "size": { "value": 3 },
+          "line_linked": { "enable": true, "distance": 130, "color": "#ff5e13", "opacity": 0.3, "width": 1 },
+          "move": { "enable": true, "speed": 2 }
+        }
+      });
+      particlesJS("particles-skills", {
+        "particles": {
+          "number": { "value": 70, "density": { "enable": true, "value_area": 800 } },
+          "color": { "value": "#ffffff" },
+          "shape": { "type": "circle" },
+          "opacity": { "value": 0.4 },
+          "size": { "value": 3 },
+          "line_linked": { "enable": true, "distance": 130, "color": "#ffffff", "opacity": 0.3, "width": 1 },
+          "move": { "enable": true, "speed": 3 }
+        }
+      });
+      particlesJS("particles-stats", {
+        "particles": {
+          "number": { "value": 60, "density": { "enable": true, "value_area": 700 } },
+          "color": { "value": "#ff5e13" },
+          "shape": { "type": "circle" },
+          "opacity": { "value": 0.4 },
+          "size": { "value": 2 },
+          "line_linked": { "enable": true, "distance": 100, "color": "#ff5e13", "opacity": 0.3, "width": 1 },
+          "move": { "enable": true, "speed": 2 }
+        }
+      });
+      particlesJS("particles-projects", {
+        "particles": {
+          "number": { "value": 45, "density": { "enable": true, "value_area": 600 } },
+          "color": { "value": "#ffffff" },
+          "shape": { "type": "circle" },
+          "opacity": { "value": 0.5 },
+          "size": { "value": 3 },
+          "line_linked": { "enable": true, "distance": 140, "color": "#ffffff", "opacity": 0.3, "width": 1 },
+          "move": { "enable": true, "speed": 2 }
+        }
+      });
+      particlesJS("particles-testimonials", {
+        "particles": {
+          "number": { "value": 40, "density": { "enable": true, "value_area": 600 } },
+          "color": { "value": "#ff5e13" },
+          "shape": { "type": "circle" },
+          "opacity": { "value": 0.4 },
+          "size": { "value": 2 },
+          "line_linked": { "enable": true, "distance": 100, "color": "#ff5e13", "opacity": 0.3, "width": 1 },
+          "move": { "enable": true, "speed": 2 }
+        }
+      });
+      particlesJS("particles-certifications", {
+        "particles": {
+          "number": { "value": 50, "density": { "enable": true, "value_area": 700 } },
+          "color": { "value": "#ffffff" },
+          "shape": { "type": "circle" },
+          "opacity": { "value": 0.3 },
+          "size": { "value": 3 },
+          "line_linked": { "enable": true, "distance": 120, "color": "#ffffff", "opacity": 0.3, "width": 1 },
+          "move": { "enable": true, "speed": 2 }
+        }
+      });
+      particlesJS("particles-interests", {
+        "particles": {
+          "number": { "value": 40, "density": { "enable": true, "value_area": 600 } },
+          "color": { "value": "#ff5e13" },
+          "shape": { "type": "circle" },
+          "opacity": { "value": 0.4 },
+          "size": { "value": 2 },
+          "line_linked": { "enable": true, "distance": 120, "color": "#ff5e13", "opacity": 0.3, "width": 1 },
+          "move": { "enable": true, "speed": 2 }
+        }
+      });
+      particlesJS("particles-contact", {
+        "particles": {
+          "number": { "value": 60, "density": { "enable": true, "value_area": 700 } },
+          "color": { "value": "#ffffff" },
+          "shape": { "type": "circle" },
+          "opacity": { "value": 0.4 },
+          "size": { "value": 3 },
+          "line_linked": { "enable": true, "distance": 120, "color": "#ffffff", "opacity": 0.3, "width": 1 },
+          "move": { "enable": true, "speed": 2 }
+        }
+      });
     });
   </script>
-  
+
+  <!-- Hide/Show Navbar on Scroll -->
+  <script defer>
+    let prevScrollpos = window.pageYOffset;
+    window.addEventListener('scroll', function() {
+      const currentScrollPos = window.pageYOffset;
+      const navbar = document.querySelector('.navbar');
+      // If scrolling down, hide navbar; if scrolling up, show it.
+      if (currentScrollPos > prevScrollpos) {
+        navbar.classList.add('nav-hide');
+      } else {
+        navbar.classList.remove('nav-hide');
+      }
+      prevScrollpos = currentScrollPos;
+    });
+  </script>
+
   <!-- Service Worker Registration for PWA -->
-  <script>
+  <script defer>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function() {
         navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
