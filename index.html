@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carter Dossias | Portfolio</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- AOS Library CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" />
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css" />
+  
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <!-- Vivus for SVG animations (for the hero network) -->
+  <script src="https://cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js"></script>
+  <!-- CountUp.js for animating numbers in Stats -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.0.7/countUp.min.js"></script>
+</head>
+<body>
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <div class="logo">CD</div>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#stats">Stats</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#interests">Interests</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="https://www.linkedin.com/in/carter-dossias850" target="_blank">LinkedIn</a></li>
+        <!-- Optional Theme Toggle -->
+        <li><button id="theme-toggle" class="theme-toggle">Toggle Theme</button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header id="hero">
+    <!-- Particle container for the hero -->
+    <div id="particles-hero"></div>
+    
+    <!-- Hero Content -->
+    <div class="hero-content" data-aos="fade-up">
+      <h1>Carter Dossias</h1>
+      <p>Network Engineer &amp; Tech Support Lead</p>
+      <div class="hero-tagline" data-aos="fade-up" data-aos-delay="300">
+        <p>Connecting the digital world through innovative network solutions</p>
+      </div>
+      <a href="#about" class="btn">Discover More</a>
+    </div>
+
+    <!-- Central Animated Network SVG -->
+    <div class="central-animation" data-aos="fade-up" data-aos-delay="500">
+      <svg id="network-svg" viewBox="0 0 200 200">
+        <circle cx="50" cy="50" r="8" fill="#ff5e13" />
+        <circle cx="150" cy="50" r="8" fill="#ff5e13" />
+        <circle cx="100" cy="150" r="8" fill="#ff5e13" />
+        <line x1="50" y1="50" x2="150" y2="50" stroke="#ff5e13" stroke-width="2"/>
+        <line x1="50" y1="50" x2="100" y2="150" stroke="#ff5e13" stroke-width="2"/>
+        <line x1="150" y1="50" x2="100" y2="150" stroke="#ff5e13" stroke-width="2"/>
+      </svg>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="700">
+      <span class="arrow"></span>
+    </div>
+  </header>
+
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <!-- Particle container for About section -->
+    <div id="particles-about"></div>
+    
+    <div class="container about-container" data-aos="fade-right">
+      <!-- Decorative Icon for About (User Silhouette) -->
+      <div class="section-decorator" data-aos="zoom-in" data-aos-delay="200">
+        <svg class="decorator-svg" viewBox="0 0 64 64">
+          <!-- Head -->
+          <circle cx="32" cy="20" r="10" stroke="#ff5e13" stroke-width="3" fill="none"/>
+          <!-- Shoulders -->
+          <path d="M14 48 c6 -12 30 -12 36 0" stroke="#ff5e13" stroke-width="3" fill="none"/>
+        </svg>
+      </div>
+
+      <div class="about-image">
+        <img 
+          src="https://media.licdn.com/dms/image/v2/D4D35AQEF9WaK0ajYqw/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1696876258287?e=1740668400&v=beta&t=h5mGrzKaAKn3W0uu6yTQ9bj4rwYFLt6tYtIHuvcDICw" 
+          alt="Carter Dossias"
+        >
+      </div>
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>
+          I'm Carter Dossias, an MIS student passionate about leveraging technology to solve complex problems.
+          With extensive experience in network engineering, systems administration, and technical support, I lead
+          operations and explore innovative IT solutions.
+        </p>
+        <a href="CarterDossias_Resume.pdf" class="btn resume-btn" target="_blank" rel="noopener">
+          Download My Resume
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE SECTION -->
+  <section id="experience">
+    <!-- Particle container for Experience -->
+    <div id="particles-experience"></div>
+
+    <div class="container experience-container" data-aos="fade-up">
+      <!-- Decorative Icon for Experience -->
+      <div class="section-decorator" data-aos="zoom-in" data-aos-delay="200">
+        <svg class="decorator-svg" viewBox="0 0 64 64">
+          <rect x="10" y="10" width="44" height="44" rx="8" ry="8" stroke="#ff5e13" stroke-width="4" fill="none"/>
+          <circle cx="32" cy="32" r="6" fill="#ff5e13"/>
+        </svg>
+      </div>
+      <h2>Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>Tech Support Lead | University of Connecticut</h3>
+          <span class="date">October 2022 – Present</span>
+          <ul>
+            <li>Managed IT support call center with Jira (live chats, calls, tickets).</li>
+            <li>Diagnosed and resolved audio/visual classroom issues.</li>
+            <li>Coordinated campus-wide migration to new digital signage system.</li>
+            <li>Performed DUO multifactor authentication admin duties.</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <h3>Network Operations Specialist | University of Connecticut</h3>
+          <span class="date">January 2024 – Present</span>
+          <ul>
+            <li>Detected and resolved VLAN, DHCP, and other network issues using Cisco Prime.</li>
+            <li>Installed/configured new switches and access points campus-wide.</li>
+            <li>Updated mapping and hardware databases for improved reliability.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION SECTION -->
+  <section id="education">
+    <!-- Particle container for Education -->
+    <div id="particles-education"></div>
+
+    <div class="container education-container" data-aos="fade-up">
+      <!-- Decorative Icon for Education (Improved Cap) -->
+      <div class="section-decorator" data-aos="zoom-in" data-aos-delay="200">
+        <svg class="decorator-svg" viewBox="0 0 64 64">
+          <path d="M32 12 L2 24 L32 36 L62 24 L32 12 Z" stroke="#ff5e13" stroke-width="3" fill="none"/>
+          <path d="M32 36 L32 52 L22 48" stroke="#ff5e13" stroke-width="3" fill="none"/>
+        </svg>
+      </div>
+      <h2>Education</h2>
+      <div class="education-card">
+        <h3>B.S. in Business, Analytics &amp; Information Management</h3>
+        <p><strong>University of Connecticut, May 2026</strong></p>
+        <p>IT Security Concentration | GPA: 3.85/4.00 | Dean’s List</p>
+        <ul>
+          <li>Relevant Coursework: Business Info Systems, Network Design, Info Security, AI Literacy, Database Design</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section id="skills">
+    <!-- Particle container for Skills -->
+    <div id="particles-skills"></div>
+
+    <div class="container skills-container" data-aos="fade-up">
+      <!-- Decorative Icon for Skills (Gear) -->
+      <div class="section-decorator" data-aos="zoom-in" data-aos-delay="200">
+        <svg class="decorator-svg" viewBox="0 0 64 64">
+          <circle cx="32" cy="32" r="6" fill="#ff5e13"/>
+          <path d="M32 2 L32 12" stroke="#ff5e13" stroke-width="2"/>
+          <path d="M32 52 L32 62" stroke="#ff5e13" stroke-width="2"/>
+          <path d="M2 32 L12 32" stroke="#ff5e13" stroke-width="2"/>
+          <path d="M52 32 L62 32" stroke="#ff5e13" stroke-width="2"/>
+          <line x1="10" y1="10" x2="18" y2="18" stroke="#ff5e13" stroke-width="2"/>
+          <line x1="46" y1="46" x2="54" y2="54" stroke="#ff5e13" stroke-width="2"/>
+        </svg>
+      </div>
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card" data-aos="zoom-in">
+          <h3>Network Engineering</h3>
+          <p>Expert in designing and managing scalable network infrastructures.</p>
+        </div>
+        <div class="skill-card" data-aos="zoom-in">
+          <h3>Systems Administration</h3>
+          <p>Skilled in Linux, macOS, and Windows with advanced troubleshooting and automation.</p>
+        </div>
+        <div class="skill-card" data-aos="zoom-in">
+          <h3>Technical Support</h3>
+          <p>Proven ability to resolve complex hardware/software issues while maintaining high client satisfaction.</p>
+        </div>
+        <div class="skill-card" data-aos="zoom-in">
+          <h3>Project Management</h3>
+          <p>Adept at coordinating IT projects and collaborating across teams for seamless execution.</p>
+        </div>
+        <div class="skill-card" data-aos="zoom-in">
+          <h3>Programming &amp; Analytics</h3>
+          <p>Proficient in Python, Java, SQL, and Excel; experienced in UI/UX design and data analysis.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS SECTION -->
+  <section id="stats">
+    <!-- Particle container for Stats -->
+    <div id="particles-stats"></div>
+
+    <div class="container stats-container" data-aos="fade-up">
+      <!-- Decorative Icon for Stats (simple square) -->
+      <div class="section-decorator" data-aos="zoom-in" data-aos-delay="200">
+        <svg class="decorator-svg" viewBox="0 0 64 64">
+          <rect x="12" y="12" width="40" height="40" rx="8" ry="8" stroke="#ff5e13" stroke-width="3" fill="none"/>
+        </svg>
+      </div>
+      <h2>By the Numbers</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h3 class="count">50</h3>
+          <p>Networks Managed</p>
+        </div>
+        <div class="stat-card">
+          <h3 class="count">500</h3>
+          <p>Support Tickets Resolved</p>
+        </div>
+        <div class="stat-card">
+          <h3 class="count">5</h3>
+          <p>Years of Experience</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects">
+    <!-- Particle container for Projects -->
+    <div id="particles-projects"></div>
+
+    <div class="container projects-container" data-aos="fade-up">
+      <!-- Decorative Icon for Projects (Magnifying Glass) -->
+      <div class="section-decorator" data-aos="zoom-in" data-aos-delay="200">
+        <svg class="decorator-svg" viewBox="0 0 64 64">
+          <circle cx="26" cy="26" r="16" stroke="#ff5e13" stroke-width="3" fill="none"/>
+          <line x1="38" y1="38" x2="58" y2="58" stroke="#ff5e13" stroke-width="3"/>
+        </svg>
+      </div>
+      <h2>Projects</h2>
+      <div class="project-card" data-aos="zoom-in">
+        <img 
+          src="https://media.licdn.com/dms/image/v2/D4E22AQEYB2M6T_MZ4g/feedshare-shrink_800/B4EZPVQQQXHkAg-/0/1734449628492?e=1743033600&v=beta&t=q01LJ_Av8L68RTP0OC5jOCseRuFzFincsTplKOfVUQk" 
+          alt="Network Topology Design"
+        >
+        <div class="project-info">
+          <h3>Network Topology Design</h3>
+          <p>A comprehensive design showcasing a modern, scalable network infrastructure.</p>
+          <a href="case-study-enterprise-network.html" class="btn">Read Case Study</a>
+        </div>
+      </div>
+      <div class="project-card" data-aos="zoom-in">
+        <img src="https://via.placeholder.com/400x300?text=Traders+Edge" alt="Traders Edge Platform">
+        <div class="project-info">
+          <h3>Traders Edge Platform</h3>
+          <p>Co-founded a student platform for collaborative stock market analysis and strategy presentations.</p>
+          <ul>
+            <li>Community-driven investment strategies</li>
+            <li>Bi-weekly educational sessions on market trends</li>
+          </ul>
+          <a href="case-study-traders-edge.html" class="btn">Read Case Study</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS SECTION -->
+  <section id="testimonials">
+    <!-- Particle container for Testimonials -->
+    <div id="particles-testimonials"></div>
+
+    <div class="container testimonials-container" data-aos="fade-up">
+      <!-- Decorative Icon for Testimonials (Quote Mark) -->
+      <div class="section-decorator" data-aos="zoom-in" data-aos-delay="200">
+        <svg class="decorator-svg" viewBox="0 0 64 64">
+          <path d="M20,24c0-8,6-12,12-12v0c-4,0-6,2-6,6c0,4,2,6,6,6v0c-4,0-6,2-6,6c0,4,2,6,6,6v0c-8,0-12-6-12-12" 
+                stroke="#ff5e13" stroke-width="3" fill="none"/>
+        </svg>
+      </div>
+      <h2>Testimonials</h2>
+      <div class="testimonial-card" data-aos="zoom-in">
+        <p>"Carter is a phenomenal network engineer who consistently delivers top-tier solutions."</p>
+        <span>- Jane Doe, Senior Manager at XYZ</span>
+      </div>
+      <div class="testimonial-card" data-aos="zoom-in">
+        <p>"His dedication to problem-solving and customer satisfaction is unmatched."</p>
+        <span>- John Smith, Team Lead at ABC</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS SECTION -->
+  <section id="certifications">
+    <!-- Particle container for Certifications -->
+    <div id="particles-certifications"></div>
+
+    <div class="container certifications-container" data-aos="fade-up">
+      <!-- Decorative Icon for Certifications (Badge) -->
+      <div class="section-decorator" data-aos="zoom-in" data-aos-delay="200">
+        <svg class="decorator-svg" viewBox="0 0 64 64">
+          <circle cx="32" cy="32" r="28" stroke="#ff5e13" stroke-width="3" fill="none" />
+          <path d="M32 16 L32 48" stroke="#ff5e13" stroke-width="3"/>
+          <path d="M20 32 L44 32" stroke="#ff5e13" stroke-width="3"/>
+        </svg>
+      </div>
+      <h2>Certifications</h2>
+      <div class="certifications-grid">
+        <div class="certification-card" data-aos="zoom-in">
+          <h3>NVIDIA-Certified Associate</h3>
+          <ul>
+            <li>AI Infrastructure &amp; Operations</li>
+            <li>GPU-accelerated computing</li>
+            <li>Optimizing AI workloads</li>
+          </ul>
+        </div>
+        <div class="certification-card" data-aos="zoom-in">
+          <h3>Cisco Meraki Solutions Specialist</h3>
+          <ul>
+            <li>Cloud management &amp; monitoring</li>
+            <li>Design &amp; troubleshooting</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERESTS SECTION -->
+  <section id="interests">
+    <!-- Particle container for Interests -->
+    <div id="particles-interests"></div>
+
+    <div class="container interests-container" data-aos="fade-up">
+      <!-- Decorative Icon for Interests (Camera) -->
+      <div class="section-decorator" data-aos="zoom-in" data-aos-delay="200">
+        <svg class="decorator-svg" viewBox="0 0 64 64">
+          <path d="M16,20 L48,20 L54,32 L48,44 L16,44 L10,32 Z" stroke="#ff5e13" stroke-width="3" fill="none"/>
+          <circle cx="32" cy="32" r="6" fill="#ff5e13"/>
+        </svg>
+      </div>
+      <h2>Interests</h2>
+      <p>
+        Passionate about UI/UX Design, Photography, Photoshop, Video Editing, Cinematography, and Trading/Investing.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact">
+    <!-- Particle container for Contact -->
+    <div id="particles-contact"></div>
+
+    <div class="container contact-container" data-aos="fade-up">
+      <h2>Contact Me</h2>
+      <p>If you would like to collaborate or have any inquiries, feel free to get in touch.</p>
+      <div class="contact-info">
+        <p><strong>Email:</strong> <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/carter-dossias850" target="_blank">Carter Dossias</a></p>
+      </div>
+      <form class="contact-form" action="#" method="POST">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- BACK TO TOP BUTTON -->
+  <a href="#hero" class="back-to-top" data-aos="fade-in" data-aos-delay="300">↑</a>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Carter Dossias. All rights reserved.</p>
+      <ul class="footer-socials">
+        <li><a href="https://github.com/YourGitHub" target="_blank">GitHub</a></li>
+        <li><a href="https://twitter.com/YourTwitter" target="_blank">Twitter</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- AOS Library JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: false,
+      mirror: true
+    });
+  </script>
+  
+  <!-- Vivus Animated SVG for the Hero Network -->
+  <script>
+    new Vivus('network-svg', { duration: 200, type: 'oneByOne' });
+  </script>
+  
+  <!-- CountUp Animation for Stats -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      var statElements = document.querySelectorAll('.stat-card h3.count');
+      statElements.forEach(function(el){
+        var target = parseInt(el.innerText, 10);
+        var countUp = new CountUp(el, target, { suffix: '+' });
+        if (!countUp.error) { countUp.start(); }
+        else { console.error(countUp.error); }
+      });
+    });
+  </script>
+
+  <!-- Theme Toggle Script -->
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', function(){
+      document.body.classList.toggle('light-mode');
+    });
+  </script>
+
+  <!-- Particles.js Config for Each Section -->
+  <script>
+    /* All sections are relatively positioned, so these containers are absolutely behind them */
+    particlesJS("particles-hero", {
+      "particles": {
+        "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5 },
+        "size": { "value": 3 },
+        "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 },
+        "move": { "enable": true, "speed": 6 }
+      }
+    });
+
+    particlesJS("particles-about", {
+      "particles": {
+        "number": { "value": 50, "density": { "enable": true, "value_area": 700 } },
+        "color": { "value": "#ff5e13" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.4 },
+        "size": { "value": 2 },
+        "line_linked": { "enable": true, "distance": 120, "color": "#ff5e13", "opacity": 0.3, "width": 1 },
+        "move": { "enable": true, "speed": 3 }
+      }
+    });
+
+    particlesJS("particles-experience", {
+      "particles": {
+        "number": { "value": 60, "density": { "enable": true, "value_area": 700 } },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.3 },
+        "size": { "value": 2 },
+        "line_linked": { "enable": true, "distance": 100, "color": "#ffffff", "opacity": 0.3, "width": 1 },
+        "move": { "enable": true, "speed": 2 }
+      }
+    });
+
+    particlesJS("particles-education", {
+      "particles": {
+        "number": { "value": 40, "density": { "enable": true, "value_area": 600 } },
+        "color": { "value": "#ff5e13" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5 },
+        "size": { "value": 3 },
+        "line_linked": { "enable": true, "distance": 130, "color": "#ff5e13", "opacity": 0.3, "width": 1 },
+        "move": { "enable": true, "speed": 2 }
+      }
+    });
+
+    particlesJS("particles-skills", {
+      "particles": {
+        "number": { "value": 70, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.4 },
+        "size": { "value": 3 },
+        "line_linked": { "enable": true, "distance": 130, "color": "#ffffff", "opacity": 0.3, "width": 1 },
+        "move": { "enable": true, "speed": 3 }
+      }
+    });
+
+    particlesJS("particles-stats", {
+      "particles": {
+        "number": { "value": 60, "density": { "enable": true, "value_area": 700 } },
+        "color": { "value": "#ff5e13" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.4 },
+        "size": { "value": 2 },
+        "line_linked": { "enable": true, "distance": 100, "color": "#ff5e13", "opacity": 0.3, "width": 1 },
+        "move": { "enable": true, "speed": 2 }
+      }
+    });
+
+    particlesJS("particles-projects", {
+      "particles": {
+        "number": { "value": 45, "density": { "enable": true, "value_area": 600 } },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5 },
+        "size": { "value": 3 },
+        "line_linked": { "enable": true, "distance": 140, "color": "#ffffff", "opacity": 0.3, "width": 1 },
+        "move": { "enable": true, "speed": 2 }
+      }
+    });
+
+    particlesJS("particles-testimonials", {
+      "particles": {
+        "number": { "value": 40, "density": { "enable": true, "value_area": 600 } },
+        "color": { "value": "#ff5e13" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.4 },
+        "size": { "value": 2 },
+        "line_linked": { "enable": true, "distance": 100, "color": "#ff5e13", "opacity": 0.3, "width": 1 },
+        "move": { "enable": true, "speed": 2 }
+      }
+    });
+
+    particlesJS("particles-certifications", {
+      "particles": {
+        "number": { "value": 50, "density": { "enable": true, "value_area": 700 } },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.3 },
+        "size": { "value": 3 },
+        "line_linked": { "enable": true, "distance": 120, "color": "#ffffff", "opacity": 0.3, "width": 1 },
+        "move": { "enable": true, "speed": 2 }
+      }
+    });
+
+    particlesJS("particles-interests", {
+      "particles": {
+        "number": { "value": 40, "density": { "enable": true, "value_area": 600 } },
+        "color": { "value": "#ff5e13" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.4 },
+        "size": { "value": 2 },
+        "line_linked": { "enable": true, "distance": 120, "color": "#ff5e13", "opacity": 0.3, "width": 1 },
+        "move": { "enable": true, "speed": 2 }
+      }
+    });
+
+    particlesJS("particles-contact", {
+      "particles": {
+        "number": { "value": 60, "density": { "enable": true, "value_area": 700 } },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.4 },
+        "size": { "value": 3 },
+        "line_linked": { "enable": true, "distance": 120, "color": "#ffffff", "opacity": 0.3, "width": 1 },
+        "move": { "enable": true, "speed": 2 }
+      }
+    });
+  </script>
+</body>
+</html>
