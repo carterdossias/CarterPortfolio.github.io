@@ -22,28 +22,43 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.0.7/countUp.min.js"></script>
 </head>
 <body>
-  <!-- NAVIGATION -->
-  <nav class="navbar">
-    <div class="container nav-container">
-      <div class="logo">CD</div>
-      <ul class="nav-links">
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#stats">Stats</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#certifications">Certifications</a></li>
-        <li><a href="#interests">Interests</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="https://www.linkedin.com/in/carter-dossias850" target="_blank">LinkedIn</a></li>
-        <!-- Optional Theme Toggle -->
-        <li><button id="theme-toggle" class="theme-toggle">Toggle Theme</button></li>
-      </ul>
+<!-- NAVIGATION -->
+<nav class="navbar">
+  <div class="container nav-container">
+    <div class="logo">CD</div>
+    <!-- Hamburger Icon for Mobile -->
+    <div class="hamburger" id="hamburger">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
     </div>
-  </nav>
+    <!-- Navigation Links -->
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#stats">Stats</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#interests">Interests</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="https://www.linkedin.com/in/carter-dossias850" target="_blank">LinkedIn</a></li>
+      <li><button id="theme-toggle" class="theme-toggle">Toggle Theme</button></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Add a script near the end of the body to toggle the mobile menu -->
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  hamburger.addEventListener('click', function(){
+    navLinks.classList.toggle('active');
+  });
+</script>
 
   <!-- HERO SECTION -->
   <header id="hero">
@@ -400,8 +415,8 @@
     <div class="container">
       <p>&copy; 2025 Carter Dossias. All rights reserved.</p>
       <ul class="footer-socials">
-        <li><a href="https://github.com/YourGitHub" target="_blank">GitHub</a></li>
-        <li><a href="https://twitter.com/YourTwitter" target="_blank">Twitter</a></li>
+        <li><a href="https://github.com/carterdossias" target="_blank">GitHub</a></li>
+        <li><a href="https://www.instagram.com/carterd12/" target="_blank">instagram</a></li>
       </ul>
     </div>
   </footer>
